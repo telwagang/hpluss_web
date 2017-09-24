@@ -48,6 +48,7 @@ export class ScheduleComponent implements OnInit {
 
         this.globel.addHeaders(list);
     }
+<<<<<<< HEAD
     getday(day?: string) {
         this.globel.isLoad(true);
         if (!day) {
@@ -56,6 +57,10 @@ export class ScheduleComponent implements OnInit {
 
         console.log(day);
         this.ds.getSchedule(day).subscribe(
+=======
+   /*  ngOnInit(): void {
+        this.ds.getSchedule().subscribe(
+>>>>>>> schedule fix
             (data) => {
                 if (data) {
                     this.schedule = data;
@@ -65,6 +70,7 @@ export class ScheduleComponent implements OnInit {
                 console.log(error);
                 this.globel.isLoad(false);
             }
+<<<<<<< HEAD
         );
     }
     getDayName(time: Date): string {
@@ -80,4 +86,8 @@ export class ScheduleComponent implements OnInit {
         return weekday[time.getDay()];
     }
 
+=======
+        )
+    } */
+>>>>>>> schedule fix
 }

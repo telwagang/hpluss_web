@@ -22,7 +22,7 @@ export class ScheduleService {
         return this.ds.get(this.pathschedule).map(
             x => <any> x
         );
-    }
+    } 
 
 
 }
