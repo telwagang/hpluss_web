@@ -115,4 +115,12 @@ var DurationModel = (function () {
     return DurationModel;
 }());
 exports.DurationModel = DurationModel;
+var NavList = (function () {
+    function NavList(path, name) {
+        this.path = path;
+        this.name = name;
+    }
+    return NavList;
+}());
+exports.NavList = NavList;
 //# sourceMappingURL=physician.model.js.map

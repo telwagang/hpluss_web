@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { PersonalComponent } from './component/personal.component';
 import { PhysicianComponent } from './component/physician.component';
-import { ViewComponent } from './component/view-all.component';
+import { ViewAllComponent } from './component/view-all.component';
 import { ScheduleComponent } from './component/schedule.component';
 import { AdjustmentComponent } from './component/adjustment.component';
 import { PersonalRoutingModule } from './personal.route';
@@ -23,7 +23,7 @@ import { ViewService } from './service/view-all.service';
         AdjustmentComponent,
         ScheduleComponent,
         PhysicianComponent,
-        ViewComponent
+        ViewAllComponent
     ],
     providers: [ViewService]
 })

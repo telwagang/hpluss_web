@@ -2,6 +2,9 @@ import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { SocketIO } from '../../service/socket-io.service';
+import { GlobalEventsManager } from '../../service/globelHandler.service';
+import { NavList } from '../../models/physician.model';
+
 @Component(
     {
         selector: `appointment`,
@@ -17,12 +20,14 @@ import { SocketIO } from '../../service/socket-io.service';
 export class AppointmentComponent implements OnInit {
     num: number;
     appointment: Array<{}>;
-    constructor(private io: SocketIO, private _changeDetector: ChangeDetectorRef) {
+    constructor(private io: SocketIO, private _changeDetector: ChangeDetectorRef,
+    private globel: GlobalEventsManager) {
         this.appointment = new Array<{}>();
     }
 
     ngOnInit() {
         this.mak();
+        this.setNavLink();
         //this.subscribeClick();
         // this.getappoimnets();
     }
@@ -40,12 +45,15 @@ export class AppointmentComponent implements OnInit {
         };*/
 
     mak(): void {
+        this.globel.isLoad(true);
+
         this.io.registerSailsListener()
             .subscribe((message: any) => {
-                console.log(message);
+               // console.log(message);
                 this.appointment = message;
                 this.num = message.length;
                 this._changeDetector.detectChanges();
+                this.globel.isLoad(false);
             });
     }
     subscribeClick(): void {
@@ -56,5 +64,14 @@ export class AppointmentComponent implements OnInit {
     unsubClick(): void {
         this.io.unsubscribeToSails();
     }
+     private setNavLink() {
+        let list = new Array<NavList>();
 
+        list.push(new NavList('/home', 'Home'));
+        list.push(new NavList('/add', 'View All'));
+        list.push(new NavList('/delete', 'Current'));
+        list.push(new NavList('/schudele', 'Refresh'));
+
+        this.globel.addHeaders(list);
+    }
 }

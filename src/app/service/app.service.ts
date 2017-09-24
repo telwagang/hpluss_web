@@ -8,14 +8,22 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class DataService {
 
-    private IpAddress: string = 'http://127.0.0.1:1337';
-    constructor(private http: Http) { }
-    get(path: any, options?: any): Observable<any> {
-        return this.http.get(this.IpAddress + path, this.jwt())
+    private IpAddress: string = 'https://hpluss.herokuapp.com';
+    constructor(private http: Http) {
+
+    }
+    get(path: any): Observable<any> {
+        return this.http.get(this.IpAddress + path , this.jwt())
             .map(this.extractData)
             .catch(this.handleError);
     }
-    getraw(path:any, options?: any){
+
+    getOption(path:any, options:any): Observable<any>{
+        return this.http.get(this.IpAddress + path + '?' + options, this.jwt())
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+    getraw(path: any, options?: any) {
         return this.http.get(this.IpAddress + path + options, this.jwt());
     }
     post(path: any, data: any): Observable<any> {
@@ -49,7 +57,7 @@ export class DataService {
         console.error(errMsg);
         return Observable.throw(errMsg);
     }
-     private jwt() {
+    private jwt() {
         // create authorization header with jwt token
         let currentUser = JSON.parse(localStorage.getItem('currentUser'));
         if (currentUser && currentUser.token) {

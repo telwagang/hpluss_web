@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { GlobalEventsManager } from '../../service/globelHandler.service';
-import { } from '@angular/roi';
+
 @Component({
     templateUrl: `./navbar.html`
 })
@@ -18,6 +18,7 @@ export class NavbarComponent {
             }
         });
     }
+
 
     navlink(value: any) {
 

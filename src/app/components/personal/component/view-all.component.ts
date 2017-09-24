@@ -6,10 +6,12 @@ import { ViewService } from '../service/view-all.service';
     templateUrl: `app/components/personal/view/view-all.view.html`
 })
 
-export class ViewComponent  implements OnInit {
+export class ViewAllComponent  implements OnInit {
     physician: PhysicianModel;
     physicians: PhysicianModel[];
     selectedId: any;
+
+
      constructor(
     private service: ViewService,
     //private route: ActivatedRoute,

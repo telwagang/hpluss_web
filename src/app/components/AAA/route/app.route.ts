@@ -7,7 +7,7 @@ import { AppointmentComponent } from '../../appoinment/appoinment.component';
 import { ScheduleComponent } from '../../schedule/schedule.component';
 import { SettingComponent } from '../../settings/settings.component';
 import { LoginComponent } from '../../login/componets/login.componet';
-import { PersonalRoutingModule } from '../../personal/personal.route';
+import { PersonalRoutingModule , heroesRoutes} from '../../personal/personal.route';
 
 import { PageNotFoundComponent } from '../componets/not-found-compontent';
 import { AuthGuard } from '../../../guards/auth.guard';
@@ -28,6 +28,10 @@ const route: Routes = [
     {
         path: 'appointment',
         component: AppointmentComponent, canActivate: [AuthGuard]
+    },
+    {
+        path: 'personal',
+        children : [...heroesRoutes]
     },
     {
         path: 'login',
@@ -51,7 +55,7 @@ const route: Routes = [
 @NgModule({
     imports: [
         RouterModule.forRoot(route),
-        PersonalRoutingModule,
+        //PersonalRoutingModule,
         CommonModule
     ],
     declarations: [

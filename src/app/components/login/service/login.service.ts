@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+                                                import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
 import { EmployeeModel } from '../../../models/physician.model';
@@ -12,7 +12,7 @@ export class UserService {
     }
 
     getById(id: string) {
-        return this.http.get('/api/users/',id).map((response: JSON) => response );
+        return this.http.getOption('/api/users/',id).map((response: JSON) => response );
     }
 
     create(user: EmployeeModel) {

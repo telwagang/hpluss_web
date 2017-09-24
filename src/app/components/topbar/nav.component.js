@@ -14,17 +14,37 @@ var globelHandler_service_1 = require("../../service/globelHandler.service");
 var authentication_service_1 = require("../login/service/authentication.service");
 var NavComponent = (function () {
     function NavComponent(router, globel, auth) {
-        var _this = this;
         this.router = router;
         this.globel = globel;
         this.auth = auth;
+        this.showbar();
+        this.spin();
+        this.SubMenuList();
+    }
+    NavComponent.prototype.spin = function () {
+        var _this = this;
+        this.globel.loadingEmitter.subscribe(function (mode) {
+            _this.shouldspin = mode;
+        });
+    };
+    NavComponent.prototype.showbar = function () {
+        var _this = this;
         this.globel.showNavBarEmitter.subscribe(function (mode) {
             // mode will be null the first time it is created, so you need to igonore it when null
             if (mode !== null) {
                 _this.showNavBar = mode;
+                var data = _this.globel.getUser();
+                _this.user = data;
             }
         });
-    }
+    };
+    NavComponent.prototype.SubMenuList = function () {
+        var _this = this;
+        this.globel.subMenuEmitter.subscribe(function (list) {
+            _this.navlist = list;
+            console.log(list.length);
+        });
+    };
     NavComponent.prototype.logout = function () {
         this.auth.logout();
         this.globel.showNavBar(false);

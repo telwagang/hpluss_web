@@ -8,16 +8,18 @@ import { SocketIO } from '../../../service/socket-io.service';
 export class ScheduleService {
 
     public schedule: Array<ScheduleModel>;
-    private pathschedule: string = '/sockect/appointment';
+    private pathschedule: string = '/schedule/byday';
     public error: any;
+    private place: string; 
     constructor(private socket: SocketIO, private ds: DataService) {
     }
 
-    getSchedule(): Observable<any> {
-       return this.socket.get(this.pathschedule);
+    getSchedule(day:string): Observable<any> {
+    this.place = 'place=Sliema';
+       return this.ds.getOption(this.pathschedule,'day='+day+'&'+this.place);
     }
     getScheduleold() {
-        return this.ds.get(this.pathschedule,'').map(
+        return this.ds.get(this.pathschedule).map(
             x => <any> x
         );
     }

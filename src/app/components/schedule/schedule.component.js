@@ -10,21 +10,59 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var schedule_service_1 = require("./service/schedule.service");
+var globelHandler_service_1 = require("../../service/globelHandler.service");
+var physician_model_1 = require("../../models/physician.model");
 var ScheduleComponent = (function () {
-    function ScheduleComponent(ds) {
+    function ScheduleComponent(ds, globel) {
         this.ds = ds;
-        this.days = ['Monday', 'Tuesday', 'Wenseday', 'thursday', 'friday', 'saturday'];
+        this.globel = globel;
+        this.days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         // schedule: Observable< ScheduleModel[]>;
         this.schedule = [];
+        this.setNavLink();
     }
     ScheduleComponent.prototype.selectperiod = function (value) {
+        this.getday(value);
     };
     ScheduleComponent.prototype.ngOnInit = function () {
-        this.ds.getSchedule().subscribe(function (data) {
+        this.getday();
+    };
+    ;
+    ScheduleComponent.prototype.setNavLink = function () {
+        var list = new Array();
+        list.push(new physician_model_1.NavList('/home', 'Home'));
+        list.push(new physician_model_1.NavList('/add', 'Add'));
+        list.push(new physician_model_1.NavList('/delete', 'Delete'));
+        list.push(new physician_model_1.NavList('/schudele', 'Refresh'));
+        this.globel.addHeaders(list);
+    };
+    ScheduleComponent.prototype.getday = function (day) {
+        var _this = this;
+        this.globel.isLoad(true);
+        if (!day) {
+            day = this.getDayName(new Date());
+        }
+        console.log(day);
+        this.ds.getSchedule(day).subscribe(function (data) {
             if (data) {
-                console.log(data);
+                _this.schedule = data;
+                _this.globel.isLoad(false);
             }
+        }, function (error) {
+            console.log(error);
+            _this.globel.isLoad(false);
         });
+    };
+    ScheduleComponent.prototype.getDayName = function (time) {
+        var weekday = new Array(7);
+        weekday[0] = "Sunday";
+        weekday[1] = "Monday";
+        weekday[2] = "Tuesday";
+        weekday[3] = "Wednesday";
+        weekday[4] = "Thursday";
+        weekday[5] = "Friday";
+        weekday[6] = "Saturday";
+        return weekday[time.getDay()];
     };
     return ScheduleComponent;
 }());
@@ -35,7 +73,8 @@ ScheduleComponent = __decorate([
         styles: [" \n\n        \n        "],
         providers: [schedule_service_1.ScheduleService]
     }),
-    __metadata("design:paramtypes", [schedule_service_1.ScheduleService])
+    __metadata("design:paramtypes", [schedule_service_1.ScheduleService,
+        globelHandler_service_1.GlobalEventsManager])
 ], ScheduleComponent);
 exports.ScheduleComponent = ScheduleComponent;
 //# sourceMappingURL=schedule.component.js.map

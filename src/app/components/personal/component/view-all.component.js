@@ -11,32 +11,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var view_all_service_1 = require("../service/view-all.service");
-var ViewComponent = (function () {
-    function ViewComponent(service, 
+var ViewAllComponent = (function () {
+    function ViewAllComponent(service, 
         //private route: ActivatedRoute,
         router) {
         this.service = service;
         this.router = router;
     }
-    ViewComponent.prototype.ngOnInit = function () {
+    ViewAllComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.service.getPhysicians().then(function (physician) {
             _this.physicians = physician;
             _this.physician = physician[0];
         });
     };
-    ViewComponent.prototype.isSelected = function (physician) { return physician.id === this.selectedId; };
-    ViewComponent.prototype.onSelect = function (hero) {
+    ViewAllComponent.prototype.isSelected = function (physician) { return physician.id === this.selectedId; };
+    ViewAllComponent.prototype.onSelect = function (hero) {
         this.router.navigate(['/hero', hero.id]);
     };
-    return ViewComponent;
+    return ViewAllComponent;
 }());
-ViewComponent = __decorate([
+ViewAllComponent = __decorate([
     core_1.Component({
         templateUrl: "app/components/personal/view/view-all.view.html"
     }),
     __metadata("design:paramtypes", [view_all_service_1.ViewService,
         router_1.Router])
-], ViewComponent);
-exports.ViewComponent = ViewComponent;
+], ViewAllComponent);
+exports.ViewAllComponent = ViewAllComponent;
 //# sourceMappingURL=view-all.component.js.map

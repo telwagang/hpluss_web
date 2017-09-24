@@ -10,8 +10,7 @@ export class AuthenticationService {
 
     login(email: string, password: string) {
         return this.http.post(this.IpAddress + '/user/login', JSON.stringify({
-            email
-            : email
+            email: email
             , password: password
         }))
             .map((response: Response) => {
@@ -24,6 +23,10 @@ export class AuthenticationService {
                 if (user && user.token) {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
                     localStorage.setItem('currentUser', JSON.stringify(user.token));
+                    localStorage.setItem('user_name',user.user.name);
+                    localStorage.setItem('email',user.user.email);
+                    localStorage.setItem('id',user.user.id);
+                    localStorage.setItem('role',user.user.role);                
                 }
                 return user.user;
             });

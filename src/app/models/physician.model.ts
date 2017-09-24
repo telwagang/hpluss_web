@@ -99,3 +99,10 @@ export class DurationModel {
         public date: Date
     ) { }
 }
+
+export class NavList {
+    constructor(
+        public path: string,
+        public name: string
+    ) { }
+}

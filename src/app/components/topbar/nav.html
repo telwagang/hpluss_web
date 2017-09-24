@@ -14,12 +14,17 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav navbar-state">
-            <li class="active"><a href="#">Home</a></li>
+            <li *ngFor="let item of navlist " class="active"><a [href]="item.path">{{item.name}}</a></li>
 
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-            <li><a class="navbar-user" (click)="logout()" routerLinkActive="active">Telwa</a></li>
+
+            <li *ngIf="shouldspin">
+                <a class="navbar-notify"></a>
+            </li>
+            <li><a class="navbar-user" (click)="logout()" routerLinkActive="active">
+                {{user}}</a></li>
             <li class="divider"></li>
             <li><a routerLink="/search" class="icon"><span class="glyphicon glyphicon-search" aria-label="true"></span></a></li>
             <li><a routerLink="/notification" class="icon" data-bubble="3"><span class="glyphicon glyphicon-bell" aria-label="true"></span></a></li>

@@ -15,13 +15,14 @@ var ScheduleService = (function () {
     function ScheduleService(socket, ds) {
         this.socket = socket;
         this.ds = ds;
-        this.pathschedule = '/sockect/appointment';
+        this.pathschedule = '/schedule/byday';
     }
-    ScheduleService.prototype.getSchedule = function () {
-        return this.socket.get(this.pathschedule);
+    ScheduleService.prototype.getSchedule = function (day) {
+        this.place = 'place=Sliema';
+        return this.ds.getOption(this.pathschedule, 'day=' + day + '&' + this.place);
     };
     ScheduleService.prototype.getScheduleold = function () {
-        return this.ds.get(this.pathschedule, '').map(function (x) { return x; });
+        return this.ds.get(this.pathschedule).map(function (x) { return x; });
     };
     return ScheduleService;
 }());

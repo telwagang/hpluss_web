@@ -12,16 +12,42 @@ var core_1 = require("@angular/core");
 var BehaviorSubject_1 = require("rxjs/BehaviorSubject");
 var GlobalEventsManager = (function () {
     function GlobalEventsManager() {
-        this._showNavBar = new BehaviorSubject_1.BehaviorSubject(null);
-        this.showNavBarEmitter = this._showNavBar.asObservable();
-        this._subMenu = new BehaviorSubject_1.BehaviorSubject(null);
-        this.subMenu = this._subMenu.asObservable();
+        this.init_loading();
+        this.init_Navbar();
+        this.init_SubMenu();
     }
     GlobalEventsManager.prototype.showNavBar = function (ifShow) {
         this._showNavBar.next(ifShow);
     };
     GlobalEventsManager.prototype.addHeaders = function (list) {
         this._subMenu.next(list);
+    };
+    GlobalEventsManager.prototype.getUser = function () {
+        return localStorage.getItem('user_name');
+    };
+    GlobalEventsManager.prototype.isLoad = function (show) {
+        this._loading.next(show);
+    };
+    // setting up the loading gif 
+    GlobalEventsManager.prototype.init_loading = function () {
+        // set up an observer subject 
+        this._loading = new BehaviorSubject_1.BehaviorSubject(false);
+        // add a listener to the subject 
+        this.loadingEmitter = this._loading.asObservable();
+    };
+    // setting up auth state 
+    GlobalEventsManager.prototype.init_Navbar = function () {
+        // set up an observer subject 
+        this._showNavBar = new BehaviorSubject_1.BehaviorSubject(null);
+        // add a listener to the subject 
+        this.showNavBarEmitter = this._showNavBar.asObservable();
+    };
+    // setting up the sub Menu Bar 
+    GlobalEventsManager.prototype.init_SubMenu = function () {
+        // set up an observer subject 
+        this._subMenu = new BehaviorSubject_1.BehaviorSubject(null);
+        // add a listener to the subject
+        this.subMenuEmitter = this._subMenu.asObservable();
     };
     return GlobalEventsManager;
 }());

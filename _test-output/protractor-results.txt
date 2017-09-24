@@ -1,0 +1,7 @@
+Protractor results for: 7/3/2017, 4:08:58 AM
+
+AppDir:./
+  Suite: QuickStart E2E Tests -- failed
+    failed - should display: Hello Angular
+      message: Failed: No element found using locator: By(css selector, h1)
+

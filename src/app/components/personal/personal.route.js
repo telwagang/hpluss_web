@@ -13,14 +13,14 @@ var view_all_component_1 = require("./component/view-all.component");
 var schedule_component_1 = require("./component/schedule.component");
 var adjustment_component_1 = require("./component/adjustment.component");
 var not_found_compontent_1 = require("../../components/aaa/componets/not-found-compontent");
-var heroesRoutes = [
+exports.heroesRoutes = [
     {
-        path: 'personal',
+        path: '',
         component: personal_component_1.PersonalComponent,
         children: [
             {
                 path: '',
-                component: view_all_component_1.ViewComponent
+                component: view_all_component_1.ViewAllComponent
             },
             {
                 path: 'physician',
@@ -49,9 +49,7 @@ var PersonalRoutingModule = (function () {
 }());
 PersonalRoutingModule = __decorate([
     core_1.NgModule({
-        imports: [
-            router_1.RouterModule.forChild(heroesRoutes)
-        ],
+        imports: [],
         exports: [
             router_1.RouterModule
         ]

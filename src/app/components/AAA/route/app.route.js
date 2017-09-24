@@ -35,6 +35,10 @@ var route = [
         component: appoinment_component_1.AppointmentComponent, canActivate: [auth_guard_1.AuthGuard]
     },
     {
+        path: 'personal',
+        children: personal_route_1.heroesRoutes.slice()
+    },
+    {
         path: 'login',
         component: login_componet_1.LoginComponent
     },
@@ -61,7 +65,7 @@ AppRouteModule = __decorate([
     core_1.NgModule({
         imports: [
             router_1.RouterModule.forRoot(route),
-            personal_route_1.PersonalRoutingModule,
+            //PersonalRoutingModule,
             common_1.CommonModule
         ],
         declarations: [

@@ -31,6 +31,10 @@ var AuthenticationService = (function () {
             if (user && user.token) {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('currentUser', JSON.stringify(user.token));
+                localStorage.setItem('user_name', user.user.name);
+                localStorage.setItem('email', user.user.email);
+                localStorage.setItem('id', user.user.id);
+                localStorage.setItem('role', user.user.role);
             }
             return user.user;
         });

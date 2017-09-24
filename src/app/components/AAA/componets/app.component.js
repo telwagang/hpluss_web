@@ -5,17 +5,42 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+require("rxjs/add/operator/filter");
+var globelHandler_service_1 = require("../../../service/globelHandler.service");
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(router, globel) {
+        this.router = router;
+        this.globel = globel;
+        this.routerChange();
     }
+    AppComponent.prototype.routerChange = function () {
+        var _this = this;
+        this.router.events
+            .subscribe(function (event) {
+            if (event instanceof router_1.NavigationStart) {
+                console.log('start');
+                _this.globel.isLoad(true);
+            }
+            else if (event instanceof router_1.NavigationEnd) {
+                console.log(' end');
+                _this.globel.isLoad(false);
+            }
+        });
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
         template: '<router-outlet name="nav"></router-outlet> <router-outlet name="navbar" ></router-outlet><router-outlet name="support"></router-outlet><router-outlet></router-outlet>'
-    })
+    }),
+    __metadata("design:paramtypes", [router_1.Router,
+        globelHandler_service_1.GlobalEventsManager])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

@@ -3,19 +3,19 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { PersonalComponent } from './component/personal.component';
 import { PhysicianComponent } from './component/physician.component';
-import { ViewComponent } from './component/view-all.component';
+import { ViewAllComponent } from './component/view-all.component';
 import { ScheduleComponent } from './component/schedule.component';
 import { AdjustmentComponent } from './component/adjustment.component';
 import { PageNotFoundComponent } from '../../components/aaa/componets/not-found-compontent';
 
-const heroesRoutes: Routes = [
+export const heroesRoutes: Routes = [
   {
-    path: 'personal',
+    path: '',
     component: PersonalComponent,
     children: [
       {
         path: '',
-        component: ViewComponent
+        component: ViewAllComponent
       },
       {
         path: 'physician',
@@ -40,7 +40,7 @@ const heroesRoutes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forChild(heroesRoutes)
+   // RouterModule.forChild(heroesRoutes)
   ],
   exports: [
     RouterModule

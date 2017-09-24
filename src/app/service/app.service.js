@@ -16,10 +16,15 @@ require("rxjs/add/operator/map");
 var DataService = (function () {
     function DataService(http) {
         this.http = http;
-        this.IpAddress = 'http://127.0.0.1:1337';
+        this.IpAddress = 'https://hpluss.herokuapp.com';
     }
-    DataService.prototype.get = function (path, options) {
+    DataService.prototype.get = function (path) {
         return this.http.get(this.IpAddress + path, this.jwt())
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
+    DataService.prototype.getOption = function (path, options) {
+        return this.http.get(this.IpAddress + path + '?' + options, this.jwt())
             .map(this.extractData)
             .catch(this.handleError);
     };

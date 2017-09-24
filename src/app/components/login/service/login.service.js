@@ -18,7 +18,7 @@ var UserService = (function () {
         return this.http.get('/api/users').map(function (response) { return response; });
     };
     UserService.prototype.getById = function (id) {
-        return this.http.get('/api/users/', id).map(function (response) { return response; });
+        return this.http.getOption('/api/users/', id).map(function (response) { return response; });
     };
     UserService.prototype.create = function (user) {
         return this.http.post('/api/users', user).map(function (response) { return response; });

@@ -10,14 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var socket_io_service_1 = require("../../service/socket-io.service");
+var globelHandler_service_1 = require("../../service/globelHandler.service");
+var physician_model_1 = require("../../models/physician.model");
 var AppointmentComponent = (function () {
-    function AppointmentComponent(io, _changeDetector) {
+    function AppointmentComponent(io, _changeDetector, globel) {
         this.io = io;
         this._changeDetector = _changeDetector;
+        this.globel = globel;
         this.appointment = new Array();
     }
     AppointmentComponent.prototype.ngOnInit = function () {
         this.mak();
+        this.setNavLink();
         //this.subscribeClick();
         // this.getappoimnets();
     };
@@ -35,12 +39,14 @@ var AppointmentComponent = (function () {
         };*/
     AppointmentComponent.prototype.mak = function () {
         var _this = this;
+        this.globel.isLoad(true);
         this.io.registerSailsListener()
             .subscribe(function (message) {
-            console.log(message);
+            // console.log(message);
             _this.appointment = message;
             _this.num = message.length;
             _this._changeDetector.detectChanges();
+            _this.globel.isLoad(false);
         });
     };
     AppointmentComponent.prototype.subscribeClick = function () {
@@ -50,6 +56,14 @@ var AppointmentComponent = (function () {
     AppointmentComponent.prototype.unsubClick = function () {
         this.io.unsubscribeToSails();
     };
+    AppointmentComponent.prototype.setNavLink = function () {
+        var list = new Array();
+        list.push(new physician_model_1.NavList('/home', 'Home'));
+        list.push(new physician_model_1.NavList('/add', 'View All'));
+        list.push(new physician_model_1.NavList('/delete', 'Current'));
+        list.push(new physician_model_1.NavList('/schudele', 'Refresh'));
+        this.globel.addHeaders(list);
+    };
     return AppointmentComponent;
 }());
 AppointmentComponent = __decorate([
@@ -58,7 +72,8 @@ AppointmentComponent = __decorate([
         templateUrl: "./appointment.view.html",
         styles: ["\n            .bottom{\n                clear:both;\n            }\n        "]
     }),
-    __metadata("design:paramtypes", [socket_io_service_1.SocketIO, core_1.ChangeDetectorRef])
+    __metadata("design:paramtypes", [socket_io_service_1.SocketIO, core_1.ChangeDetectorRef,
+        globelHandler_service_1.GlobalEventsManager])
 ], AppointmentComponent);
 exports.AppointmentComponent = AppointmentComponent;
 //# sourceMappingURL=appoinment.component.js.map

@@ -33,7 +33,7 @@ PersonalModule = __decorate([
             adjustment_component_1.AdjustmentComponent,
             schedule_component_1.ScheduleComponent,
             physician_component_1.PhysicianComponent,
-            view_all_component_1.ViewComponent
+            view_all_component_1.ViewAllComponent
         ],
         providers: [view_all_service_1.ViewService]
     })
