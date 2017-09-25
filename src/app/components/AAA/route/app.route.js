@@ -5,6 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
@@ -56,27 +57,27 @@ var route = [
     { path: '', component: support_componet_1.SupportComponent, outlet: 'support' },
     { path: '**', component: not_found_compontent_1.PageNotFoundComponent }
 ];
-var AppRouteModule = (function () {
+var AppRouteModule = /** @class */ (function () {
     function AppRouteModule() {
     }
+    AppRouteModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                router_1.RouterModule.forRoot(route),
+                //PersonalRoutingModule,
+                common_1.CommonModule
+            ],
+            declarations: [
+                appoinment_component_1.AppointmentComponent,
+                account_componet_1.AccountComponent,
+                settings_component_1.SettingComponent
+            ],
+            exports: [
+                router_1.RouterModule
+            ]
+        })
+    ], AppRouteModule);
     return AppRouteModule;
 }());
-AppRouteModule = __decorate([
-    core_1.NgModule({
-        imports: [
-            router_1.RouterModule.forRoot(route),
-            //PersonalRoutingModule,
-            common_1.CommonModule
-        ],
-        declarations: [
-            appoinment_component_1.AppointmentComponent,
-            account_componet_1.AccountComponent,
-            settings_component_1.SettingComponent
-        ],
-        exports: [
-            router_1.RouterModule
-        ]
-    })
-], AppRouteModule);
 exports.AppRouteModule = AppRouteModule;
 //# sourceMappingURL=app.route.js.map

@@ -8,10 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var index_1 = require("../service/index");
-var LoginComponent = (function () {
+var LoginComponent = /** @class */ (function () {
     function LoginComponent(global, route, router, authenticationService, alertService) {
         this.global = global;
         this.route = route;
@@ -44,18 +45,18 @@ var LoginComponent = (function () {
             }
         });
     };
+    LoginComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            templateUrl: 'login.view.html'
+        }),
+        __metadata("design:paramtypes", [index_1.GlobalEventsManager,
+            router_1.ActivatedRoute,
+            router_1.Router,
+            index_1.AuthenticationService,
+            index_1.AlertService])
+    ], LoginComponent);
     return LoginComponent;
 }());
-LoginComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        templateUrl: 'login.view.html'
-    }),
-    __metadata("design:paramtypes", [index_1.GlobalEventsManager,
-        router_1.ActivatedRoute,
-        router_1.Router,
-        index_1.AuthenticationService,
-        index_1.AlertService])
-], LoginComponent);
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.componet.js.map

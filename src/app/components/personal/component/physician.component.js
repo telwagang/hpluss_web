@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
-var PhysicianComponent = (function () {
+var PhysicianComponent = /** @class */ (function () {
     function PhysicianComponent(fb) {
         this.fb = fb;
         this.days = ['Monday', 'Tuesday', 'Wenseday', 'thursday', 'friday', 'saturday'];
@@ -33,15 +34,15 @@ var PhysicianComponent = (function () {
     PhysicianComponent.prototype.onSubmit = function (value) {
         console.log(value);
     };
+    PhysicianComponent = __decorate([
+        core_1.Component({
+            selector: 'physician',
+            templateUrl: "app/components/personal/view/physician.view.html",
+            styles: ["\n        button{\n            margin-top: 20px;\n        }\n    "]
+        }),
+        __metadata("design:paramtypes", [forms_1.FormBuilder])
+    ], PhysicianComponent);
     return PhysicianComponent;
 }());
-PhysicianComponent = __decorate([
-    core_1.Component({
-        selector: 'physician',
-        templateUrl: "app/components/personal/view/physician.view.html",
-        styles: ["\n        button{\n            margin-top: 20px;\n        }\n    "]
-    }),
-    __metadata("design:paramtypes", [forms_1.FormBuilder])
-], PhysicianComponent);
 exports.PhysicianComponent = PhysicianComponent;
 //# sourceMappingURL=physician.component.js.map

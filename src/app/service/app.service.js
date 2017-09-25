@@ -8,12 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var Observable_1 = require("rxjs/Observable");
 require("rxjs/add/operator/catch");
 require("rxjs/add/operator/map");
-var DataService = (function () {
+var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
         this.IpAddress = 'https://hpluss.herokuapp.com';
@@ -68,11 +69,11 @@ var DataService = (function () {
             return new http_1.RequestOptions({ headers: headers });
         }
     };
+    DataService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.Http])
+    ], DataService);
     return DataService;
 }());
-DataService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
-], DataService);
 exports.DataService = DataService;
 //# sourceMappingURL=app.service.js.map

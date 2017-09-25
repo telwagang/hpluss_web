@@ -8,11 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var schedule_service_1 = require("./service/schedule.service");
 var globelHandler_service_1 = require("../../service/globelHandler.service");
 var physician_model_1 = require("../../models/physician.model");
-var ScheduleComponent = (function () {
+var ScheduleComponent = /** @class */ (function () {
     function ScheduleComponent(ds, globel) {
         this.ds = ds;
         this.globel = globel;
@@ -64,17 +65,17 @@ var ScheduleComponent = (function () {
         weekday[6] = "Saturday";
         return weekday[time.getDay()];
     };
+    ScheduleComponent = __decorate([
+        core_1.Component({
+            selector: "schedule",
+            templateUrl: "./schedule.view.html",
+            styles: [" \n\n        \n        "],
+            providers: [schedule_service_1.ScheduleService]
+        }),
+        __metadata("design:paramtypes", [schedule_service_1.ScheduleService,
+            globelHandler_service_1.GlobalEventsManager])
+    ], ScheduleComponent);
     return ScheduleComponent;
 }());
-ScheduleComponent = __decorate([
-    core_1.Component({
-        selector: "schedule",
-        templateUrl: "./schedule.view.html",
-        styles: [" \n\n        \n        "],
-        providers: [schedule_service_1.ScheduleService]
-    }),
-    __metadata("design:paramtypes", [schedule_service_1.ScheduleService,
-        globelHandler_service_1.GlobalEventsManager])
-], ScheduleComponent);
 exports.ScheduleComponent = ScheduleComponent;
 //# sourceMappingURL=schedule.component.js.map

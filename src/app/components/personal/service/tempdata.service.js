@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var physician_model_1 = require("../../../models/physician.model");
 var physicianlist = [
     new physician_model_1.PhysicianModel(1, 'john', 'general', new Date(2017, 2, 12), 20, ['SUN', 'MON', 'FRI']),

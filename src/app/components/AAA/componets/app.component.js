@@ -8,11 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 require("rxjs/add/operator/filter");
 var globelHandler_service_1 = require("../../../service/globelHandler.service");
-var AppComponent = (function () {
+var AppComponent = /** @class */ (function () {
     function AppComponent(router, globel) {
         this.router = router;
         this.globel = globel;
@@ -32,15 +33,15 @@ var AppComponent = (function () {
             }
         });
     };
+    AppComponent = __decorate([
+        core_1.Component({
+            selector: 'my-app',
+            template: '<router-outlet name="nav"></router-outlet> <router-outlet name="navbar" ></router-outlet><router-outlet name="support"></router-outlet><router-outlet></router-outlet>'
+        }),
+        __metadata("design:paramtypes", [router_1.Router,
+            globelHandler_service_1.GlobalEventsManager])
+    ], AppComponent);
     return AppComponent;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        template: '<router-outlet name="nav"></router-outlet> <router-outlet name="navbar" ></router-outlet><router-outlet name="support"></router-outlet><router-outlet></router-outlet>'
-    }),
-    __metadata("design:paramtypes", [router_1.Router,
-        globelHandler_service_1.GlobalEventsManager])
-], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

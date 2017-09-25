@@ -8,10 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var view_all_service_1 = require("../service/view-all.service");
-var ViewAllComponent = (function () {
+var ViewAllComponent = /** @class */ (function () {
     function ViewAllComponent(service, 
         //private route: ActivatedRoute,
         router) {
@@ -29,14 +30,14 @@ var ViewAllComponent = (function () {
     ViewAllComponent.prototype.onSelect = function (hero) {
         this.router.navigate(['/hero', hero.id]);
     };
+    ViewAllComponent = __decorate([
+        core_1.Component({
+            templateUrl: "app/components/personal/view/view-all.view.html"
+        }),
+        __metadata("design:paramtypes", [view_all_service_1.ViewService,
+            router_1.Router])
+    ], ViewAllComponent);
     return ViewAllComponent;
 }());
-ViewAllComponent = __decorate([
-    core_1.Component({
-        templateUrl: "app/components/personal/view/view-all.view.html"
-    }),
-    __metadata("design:paramtypes", [view_all_service_1.ViewService,
-        router_1.Router])
-], ViewAllComponent);
 exports.ViewAllComponent = ViewAllComponent;
 //# sourceMappingURL=view-all.component.js.map

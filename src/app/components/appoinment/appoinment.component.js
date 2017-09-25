@@ -8,11 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var socket_io_service_1 = require("../../service/socket-io.service");
 var globelHandler_service_1 = require("../../service/globelHandler.service");
 var physician_model_1 = require("../../models/physician.model");
-var AppointmentComponent = (function () {
+var AppointmentComponent = /** @class */ (function () {
     function AppointmentComponent(io, _changeDetector, globel) {
         this.io = io;
         this._changeDetector = _changeDetector;
@@ -64,16 +65,16 @@ var AppointmentComponent = (function () {
         list.push(new physician_model_1.NavList('/schudele', 'Refresh'));
         this.globel.addHeaders(list);
     };
+    AppointmentComponent = __decorate([
+        core_1.Component({
+            selector: "appointment",
+            templateUrl: "./appointment.view.html",
+            styles: ["\n            .bottom{\n                clear:both;\n            }\n        "]
+        }),
+        __metadata("design:paramtypes", [socket_io_service_1.SocketIO, core_1.ChangeDetectorRef,
+            globelHandler_service_1.GlobalEventsManager])
+    ], AppointmentComponent);
     return AppointmentComponent;
 }());
-AppointmentComponent = __decorate([
-    core_1.Component({
-        selector: "appointment",
-        templateUrl: "./appointment.view.html",
-        styles: ["\n            .bottom{\n                clear:both;\n            }\n        "]
-    }),
-    __metadata("design:paramtypes", [socket_io_service_1.SocketIO, core_1.ChangeDetectorRef,
-        globelHandler_service_1.GlobalEventsManager])
-], AppointmentComponent);
 exports.AppointmentComponent = AppointmentComponent;
 //# sourceMappingURL=appoinment.component.js.map

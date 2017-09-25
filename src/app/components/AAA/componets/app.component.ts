@@ -17,7 +17,7 @@ export class AppComponent {
 
   private routerChange() {
     this.router.events
-      .subscribe((event: NavigationStart | NavigationEnd) => {
+      .subscribe((event: any) => {
         if (event instanceof NavigationStart) {
           console.log('start');
           this.globel.isLoad(true);

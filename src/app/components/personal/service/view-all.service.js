@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var tempdata_service_1 = require("./tempdata.service");
-var ViewService = (function () {
+var ViewService = /** @class */ (function () {
     function ViewService() {
     }
     ViewService.prototype.getPhysicians = function () { return tempdata_service_1.PhysicianPromise; };
@@ -18,11 +19,11 @@ var ViewService = (function () {
         return tempdata_service_1.PhysicianPromise
             .then(function (physicians) { return physicians.find(function (physician) { return physician.id === +id; }); });
     };
+    ViewService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [])
+    ], ViewService);
     return ViewService;
 }());
-ViewService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [])
-], ViewService);
 exports.ViewService = ViewService;
 //# sourceMappingURL=view-all.service.js.map

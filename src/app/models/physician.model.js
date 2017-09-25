@@ -1,5 +1,6 @@
 "use strict";
-var PhysicianModel = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var PhysicianModel = /** @class */ (function () {
     function PhysicianModel(id, physician, type, time, duration, available) {
         this.id = id;
         this.physician = physician;
@@ -11,7 +12,7 @@ var PhysicianModel = (function () {
     return PhysicianModel;
 }());
 exports.PhysicianModel = PhysicianModel;
-var PersonModel = (function () {
+var PersonModel = /** @class */ (function () {
     function PersonModel(personID, title, firstName, lastName, idCard, userId, password, address, relationship, gender, dateofbirth, contactEmergency) {
         this.personID = personID;
         this.title = title;
@@ -29,7 +30,7 @@ var PersonModel = (function () {
     return PersonModel;
 }());
 exports.PersonModel = PersonModel;
-var PatientModel = (function () {
+var PatientModel = /** @class */ (function () {
     function PatientModel(patientId, weight, region, national, personalDisease, bloodtype) {
         this.patientId = patientId;
         this.weight = weight;
@@ -41,7 +42,7 @@ var PatientModel = (function () {
     return PatientModel;
 }());
 exports.PatientModel = PatientModel;
-var AppointmentModel = (function () {
+var AppointmentModel = /** @class */ (function () {
     function AppointmentModel(time, specialty, patient, doctor, disease, detail, appointmentId, date, arrived) {
         this.time = time;
         this.specialty = specialty;
@@ -56,7 +57,7 @@ var AppointmentModel = (function () {
     return AppointmentModel;
 }());
 exports.AppointmentModel = AppointmentModel;
-var ScheduleModel = (function () {
+var ScheduleModel = /** @class */ (function () {
     function ScheduleModel(id, owner, ownerid, day, specialty, duration, UpdateDate) {
         this.id = id;
         this.owner = owner;
@@ -69,7 +70,7 @@ var ScheduleModel = (function () {
     return ScheduleModel;
 }());
 exports.ScheduleModel = ScheduleModel;
-var HospitalModel = (function () {
+var HospitalModel = /** @class */ (function () {
     function HospitalModel(hospitalId, hospitalName, address, registrationNo, phoneNumber) {
         this.hospitalId = hospitalId;
         this.hospitalName = hospitalName;
@@ -80,7 +81,7 @@ var HospitalModel = (function () {
     return HospitalModel;
 }());
 exports.HospitalModel = HospitalModel;
-var ResportModel = (function () {
+var ResportModel = /** @class */ (function () {
     function ResportModel(patientid, appointmentId, disease, treatment, doctorId, DateOfTreatment) {
         this.patientid = patientid;
         this.appointmentId = appointmentId;
@@ -92,7 +93,7 @@ var ResportModel = (function () {
     return ResportModel;
 }());
 exports.ResportModel = ResportModel;
-var EmployeeModel = (function () {
+var EmployeeModel = /** @class */ (function () {
     function EmployeeModel(employeeId, licenseNo, DeptId, workDate, Resign, specialty) {
         this.employeeId = employeeId;
         this.licenseNo = licenseNo;
@@ -104,7 +105,7 @@ var EmployeeModel = (function () {
     return EmployeeModel;
 }());
 exports.EmployeeModel = EmployeeModel;
-var DurationModel = (function () {
+var DurationModel = /** @class */ (function () {
     function DurationModel(doctorId, name, duration, newduration, date) {
         this.doctorId = doctorId;
         this.name = name;
@@ -115,7 +116,7 @@ var DurationModel = (function () {
     return DurationModel;
 }());
 exports.DurationModel = DurationModel;
-var NavList = (function () {
+var NavList = /** @class */ (function () {
     function NavList(path, name) {
         this.path = path;
         this.name = name;

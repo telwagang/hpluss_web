@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var BehaviorSubject_1 = require("rxjs/BehaviorSubject");
-var GlobalEventsManager = (function () {
+var GlobalEventsManager = /** @class */ (function () {
     function GlobalEventsManager() {
         this.init_loading();
         this.init_Navbar();
@@ -49,11 +50,11 @@ var GlobalEventsManager = (function () {
         // add a listener to the subject
         this.subMenuEmitter = this._subMenu.asObservable();
     };
+    GlobalEventsManager = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [])
+    ], GlobalEventsManager);
     return GlobalEventsManager;
 }());
-GlobalEventsManager = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [])
-], GlobalEventsManager);
 exports.GlobalEventsManager = GlobalEventsManager;
 //# sourceMappingURL=globelHandler.service.js.map

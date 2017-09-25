@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var globelHandler_service_1 = require("../../service/globelHandler.service");
-var NavbarComponent = (function () {
+var NavbarComponent = /** @class */ (function () {
     function NavbarComponent(globel) {
         var _this = this;
         this.globel = globel;
@@ -24,13 +25,13 @@ var NavbarComponent = (function () {
     }
     NavbarComponent.prototype.navlink = function (value) {
     };
+    NavbarComponent = __decorate([
+        core_1.Component({
+            templateUrl: "./navbar.html"
+        }),
+        __metadata("design:paramtypes", [globelHandler_service_1.GlobalEventsManager])
+    ], NavbarComponent);
     return NavbarComponent;
 }());
-NavbarComponent = __decorate([
-    core_1.Component({
-        templateUrl: "./navbar.html"
-    }),
-    __metadata("design:paramtypes", [globelHandler_service_1.GlobalEventsManager])
-], NavbarComponent);
 exports.NavbarComponent = NavbarComponent;
 //# sourceMappingURL=navbar.componet.js.map

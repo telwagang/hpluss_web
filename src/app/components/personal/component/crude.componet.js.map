@@ -1,1 +1,1 @@
-{"version":3,"file":"crude.componet.js","sourceRoot":"","sources":["crude.componet.ts"],"names":[],"mappings":";;;;;;;AAAA,sCAA0C;AAM1C,IAAa,cAAc;IAA3B;IAEA,CAAC;IAAD,qBAAC;AAAD,CAAC,AAFD,IAEC;AAFY,cAAc;IAJ1B,gBAAS,CAAC;QACP,WAAW,EAAE,iDAAiD;KACjE,CAAC;GAEW,cAAc,CAE1B;AAFY,wCAAc"}
+{"version":3,"file":"crude.componet.js","sourceRoot":"","sources":["crude.componet.ts"],"names":[],"mappings":";;;;;;;;AAAA,sCAA0C;AAM1C;IAAA;IAEA,CAAC;IAFY,cAAc;QAJ1B,gBAAS,CAAC;YACP,WAAW,EAAE,iDAAiD;SACjE,CAAC;OAEW,cAAc,CAE1B;IAAD,qBAAC;CAAA,AAFD,IAEC;AAFY,wCAAc"}

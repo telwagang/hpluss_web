@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var app_service_1 = require("../../../service/app.service");
-var UserService = (function () {
+var UserService = /** @class */ (function () {
     function UserService(http) {
         this.http = http;
     }
@@ -29,11 +30,11 @@ var UserService = (function () {
     UserService.prototype.delete = function (id) {
         return this.http.delete('/api/users/' + id).map(function (response) { return response; });
     };
+    UserService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [app_service_1.DataService])
+    ], UserService);
     return UserService;
 }());
-UserService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [app_service_1.DataService])
-], UserService);
 exports.UserService = UserService;
 //# sourceMappingURL=login.service.js.map

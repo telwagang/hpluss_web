@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var physician_model_1 = require("../../../models/physician.model");
-var AdjustmentComponent = (function () {
+var AdjustmentComponent = /** @class */ (function () {
     function AdjustmentComponent() {
         this.duration = [
             new physician_model_1.DurationModel('we23123', 'Dr. wolf gang', 23, 0, new Date),
@@ -30,15 +31,15 @@ var AdjustmentComponent = (function () {
     AdjustmentComponent.prototype.changeValue = function (event, D) {
         console.log(D);
     };
+    AdjustmentComponent = __decorate([
+        core_1.Component({
+            selector: "adjustment",
+            templateUrl: "app/components/personal/view/adjustment.view.html",
+            styles: ["\n        .box{\n            width:30px;\n            padding:0px !important;\n            background: #f2f2f2;\n    border: 1px solid #dadada;\n    text-align: center;\n}\n        .full{\n            width:100%;\n        }\n            \n        }\n        thead,tbody{\n            display:block;\n        }\n        \n    "]
+        }),
+        __metadata("design:paramtypes", [])
+    ], AdjustmentComponent);
     return AdjustmentComponent;
 }());
-AdjustmentComponent = __decorate([
-    core_1.Component({
-        selector: "adjustment",
-        templateUrl: "app/components/personal/view/adjustment.view.html",
-        styles: ["\n        .box{\n            width:30px;\n            padding:0px !important;\n            background: #f2f2f2;\n    border: 1px solid #dadada;\n    text-align: center;\n}\n        .full{\n            width:100%;\n        }\n            \n        }\n        thead,tbody{\n            display:block;\n        }\n        \n    "]
-    }),
-    __metadata("design:paramtypes", [])
-], AdjustmentComponent);
 exports.AdjustmentComponent = AdjustmentComponent;
 //# sourceMappingURL=adjustment.component.js.map

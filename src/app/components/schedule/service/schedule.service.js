@@ -8,10 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var app_service_1 = require("../../../service/app.service");
 var socket_io_service_1 = require("../../../service/socket-io.service");
-var ScheduleService = (function () {
+var ScheduleService = /** @class */ (function () {
     function ScheduleService(socket, ds) {
         this.socket = socket;
         this.ds = ds;
@@ -24,11 +25,11 @@ var ScheduleService = (function () {
     ScheduleService.prototype.getScheduleold = function () {
         return this.ds.get(this.pathschedule).map(function (x) { return x; });
     };
+    ScheduleService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [socket_io_service_1.SocketIO, app_service_1.DataService])
+    ], ScheduleService);
     return ScheduleService;
 }());
-ScheduleService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [socket_io_service_1.SocketIO, app_service_1.DataService])
-], ScheduleService);
 exports.ScheduleService = ScheduleService;
 //# sourceMappingURL=schedule.service.js.map

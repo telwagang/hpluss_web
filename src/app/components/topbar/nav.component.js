@@ -8,11 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var globelHandler_service_1 = require("../../service/globelHandler.service");
 var authentication_service_1 = require("../login/service/authentication.service");
-var NavComponent = (function () {
+var NavComponent = /** @class */ (function () {
     function NavComponent(router, globel, auth) {
         this.router = router;
         this.globel = globel;
@@ -50,16 +51,16 @@ var NavComponent = (function () {
         this.globel.showNavBar(false);
         this.router.navigate(['/login']);
     };
+    NavComponent = __decorate([
+        core_1.Component({
+            selector: "topbar",
+            templateUrl: "./nav.html"
+        }),
+        __metadata("design:paramtypes", [router_1.Router,
+            globelHandler_service_1.GlobalEventsManager,
+            authentication_service_1.AuthenticationService])
+    ], NavComponent);
     return NavComponent;
 }());
-NavComponent = __decorate([
-    core_1.Component({
-        selector: "topbar",
-        templateUrl: "./nav.html"
-    }),
-    __metadata("design:paramtypes", [router_1.Router,
-        globelHandler_service_1.GlobalEventsManager,
-        authentication_service_1.AuthenticationService])
-], NavComponent);
 exports.NavComponent = NavComponent;
 //# sourceMappingURL=nav.component.js.map

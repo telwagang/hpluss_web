@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var globelHandler_service_1 = require("../../service/globelHandler.service");
-var SupportComponent = (function () {
+var SupportComponent = /** @class */ (function () {
     function SupportComponent(globel) {
         var _this = this;
         this.globel = globel;
@@ -21,13 +22,13 @@ var SupportComponent = (function () {
             }
         });
     }
+    SupportComponent = __decorate([
+        core_1.Component({
+            templateUrl: "./support.html"
+        }),
+        __metadata("design:paramtypes", [globelHandler_service_1.GlobalEventsManager])
+    ], SupportComponent);
     return SupportComponent;
 }());
-SupportComponent = __decorate([
-    core_1.Component({
-        templateUrl: "./support.html"
-    }),
-    __metadata("design:paramtypes", [globelHandler_service_1.GlobalEventsManager])
-], SupportComponent);
 exports.SupportComponent = SupportComponent;
 //# sourceMappingURL=support.componet.js.map
