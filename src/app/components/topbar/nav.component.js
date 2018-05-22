@@ -43,13 +43,12 @@ var NavComponent = /** @class */ (function () {
         var _this = this;
         this.globel.subMenuEmitter.subscribe(function (list) {
             _this.navlist = list;
-            console.log(list.length);
         });
     };
     NavComponent.prototype.logout = function () {
         this.auth.logout();
         this.globel.showNavBar(false);
-        this.router.navigate(['/login']);
+        this.router.navigate(["/login"]);
     };
     NavComponent = __decorate([
         core_1.Component({

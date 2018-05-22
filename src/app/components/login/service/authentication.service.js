@@ -15,10 +15,11 @@ var http_1 = require("@angular/http");
 var AuthenticationService = /** @class */ (function () {
     function AuthenticationService(http) {
         this.http = http;
-        this.IpAddress = 'http://127.0.0.1:1337';
+        this.IpAddress = "https://hpluss.herokuapp.com";
     }
     AuthenticationService.prototype.login = function (email, password) {
-        return this.http.post(this.IpAddress + '/user/login', JSON.stringify({
+        return this.http
+            .post(this.IpAddress + "/user/login", JSON.stringify({
             email: email,
             password: password
         }))
@@ -31,18 +32,18 @@ var AuthenticationService = /** @class */ (function () {
             }
             if (user && user.token) {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
-                localStorage.setItem('currentUser', JSON.stringify(user.token));
-                localStorage.setItem('user_name', user.user.name);
-                localStorage.setItem('email', user.user.email);
-                localStorage.setItem('id', user.user.id);
-                localStorage.setItem('role', user.user.role);
+                localStorage.setItem("currentUser", JSON.stringify(user.token));
+                localStorage.setItem("user_name", user.user.name);
+                localStorage.setItem("email", user.user.email);
+                localStorage.setItem("id", user.user.id);
+                localStorage.setItem("role", user.user.role);
             }
             return user.user;
         });
     };
     AuthenticationService.prototype.logout = function () {
         // remove user from local storage to log user out
-        localStorage.removeItem('currentUser');
+        localStorage.removeItem("currentUser");
     };
     AuthenticationService = __decorate([
         core_1.Injectable(),

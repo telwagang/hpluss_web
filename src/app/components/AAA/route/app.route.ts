@@ -60,8 +60,7 @@ const route: Routes = [
     declarations: [
         AppointmentComponent,
         AccountComponent,
-        SettingComponent,
-      PageNotFoundComponent
+        SettingComponent
     ],
     exports: [
         RouterModule
