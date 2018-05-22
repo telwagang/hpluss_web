@@ -53,7 +53,7 @@ var NavComponent = /** @class */ (function () {
     };
     NavComponent = __decorate([
         core_1.Component({
-            selector: "topbar",
+            selector: "ActiveBar",
             templateUrl: "./nav.html"
         }),
         __metadata("design:paramtypes", [router_1.Router,

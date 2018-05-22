@@ -25,7 +25,7 @@ export class ScheduleComponent implements OnInit {
     // schedule: Observable< ScheduleModel[]>;
     schedule: string[] = [];
     constructor(private ds: ScheduleService,
-        private globel: GlobalEventsManager) {
+        private global: GlobalEventsManager) {
         this.setNavLink();
     }
 
@@ -37,17 +37,16 @@ export class ScheduleComponent implements OnInit {
     };
 
     private setNavLink() {
-        let list = new Array<NavList>();
+        let list = new Array<NavList>(
+                new NavList('/home', 'Home'),
+                new NavList('/add', 'Add'),
+                new NavList('/delete', 'Delete'),
+                new NavList('/schudele', 'Refresh'));
 
-        list.push(new NavList('/home', 'Home'));
-        list.push(new NavList('/add', 'Add'));
-        list.push(new NavList('/delete', 'Delete'));
-        list.push(new NavList('/schudele', 'Refresh'));
-
-        this.globel.addHeaders(list);
+        this.global.addHeaders(list);
     }
     getday(day?: string) {
-        this.globel.isLoad(true);
+        this.global.isLoad(true);
         if (!day) {
             day = this.getDayName(new Date());
         }
@@ -57,11 +56,11 @@ export class ScheduleComponent implements OnInit {
             (data) => {
                 if (data) {
                     this.schedule = data;
-                    this.globel.isLoad(false);
+                    this.global.isLoad(false);
                 }
             }, (error) => {
                 console.log(error);
-                this.globel.isLoad(false);
+                this.global.isLoad(false);
             }
         );
     }

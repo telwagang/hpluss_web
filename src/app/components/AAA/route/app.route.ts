@@ -7,13 +7,13 @@ import { AppointmentComponent } from '../../appoinment/appoinment.component';
 import { ScheduleComponent } from '../../schedule/schedule.component';
 import { SettingComponent } from '../../settings/settings.component';
 import { LoginComponent } from '../../login/componets/login.componet';
-import { PersonalRoutingModule , heroesRoutes} from '../../personal/personal.route';
+import { heroesRoutes} from '../../personal/personal.route';
 
 import { PageNotFoundComponent } from '../componets/not-found-compontent';
 import { AuthGuard } from '../../../guards/auth.guard';
-import { NavComponent } from '../../topbar/nav.component';
-import { SupportComponent } from '../../supportbar/support.componet';
-import { NavbarComponent } from '../../sidebar/navbar.componet';
+
+import { NavbarComponent, SupportComponent, NavComponent } from "../componets/index";
+
 
 const route: Routes = [
     {
@@ -55,7 +55,6 @@ const route: Routes = [
 @NgModule({
     imports: [
         RouterModule.forRoot(route),
-        //PersonalRoutingModule,
         CommonModule
     ],
     declarations: [

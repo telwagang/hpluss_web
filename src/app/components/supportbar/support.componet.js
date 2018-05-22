@@ -24,6 +24,7 @@ var SupportComponent = /** @class */ (function () {
     }
     SupportComponent = __decorate([
         core_1.Component({
+            selector: "SocialBar",
             templateUrl: "./support.html"
         }),
         __metadata("design:paramtypes", [globelHandler_service_1.GlobalEventsManager])

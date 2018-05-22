@@ -14,9 +14,9 @@ var schedule_service_1 = require("./service/schedule.service");
 var globelHandler_service_1 = require("../../service/globelHandler.service");
 var physician_model_1 = require("../../models/physician.model");
 var ScheduleComponent = /** @class */ (function () {
-    function ScheduleComponent(ds, globel) {
+    function ScheduleComponent(ds, global) {
         this.ds = ds;
-        this.globel = globel;
+        this.global = global;
         this.days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         // schedule: Observable< ScheduleModel[]>;
         this.schedule = [];
@@ -30,16 +30,12 @@ var ScheduleComponent = /** @class */ (function () {
     };
     ;
     ScheduleComponent.prototype.setNavLink = function () {
-        var list = new Array();
-        list.push(new physician_model_1.NavList('/home', 'Home'));
-        list.push(new physician_model_1.NavList('/add', 'Add'));
-        list.push(new physician_model_1.NavList('/delete', 'Delete'));
-        list.push(new physician_model_1.NavList('/schudele', 'Refresh'));
-        this.globel.addHeaders(list);
+        var list = new Array(new physician_model_1.NavList('/home', 'Home'), new physician_model_1.NavList('/add', 'Add'), new physician_model_1.NavList('/delete', 'Delete'), new physician_model_1.NavList('/schudele', 'Refresh'));
+        this.global.addHeaders(list);
     };
     ScheduleComponent.prototype.getday = function (day) {
         var _this = this;
-        this.globel.isLoad(true);
+        this.global.isLoad(true);
         if (!day) {
             day = this.getDayName(new Date());
         }
@@ -47,11 +43,11 @@ var ScheduleComponent = /** @class */ (function () {
         this.ds.getSchedule(day).subscribe(function (data) {
             if (data) {
                 _this.schedule = data;
-                _this.globel.isLoad(false);
+                _this.global.isLoad(false);
             }
         }, function (error) {
             console.log(error);
-            _this.globel.isLoad(false);
+            _this.global.isLoad(false);
         });
     };
     ScheduleComponent.prototype.getDayName = function (time) {
