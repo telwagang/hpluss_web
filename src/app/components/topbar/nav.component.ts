@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { NavList } from '../../models/physician.model';
 
 @Component({
-    selector: `topbar`,
+    selector: `ActiveBar`,
     templateUrl: `./nav.html`
 })
 

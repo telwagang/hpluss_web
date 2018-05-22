@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { GlobalEventsManager } from '../../service/globelHandler.service';
 @Component({
+    selector: `SocialBar`,
     templateUrl: `./support.html`
 })
 

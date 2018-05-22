@@ -14,7 +14,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav navbar-state">
-            <li *ngFor="let item of navlist " class="active"><a [href]="item.path">{{item.name}}</a></li>
+            <li *ngFor="let item of navlist "><a [routerLink]="item.path" routerLinkActive="active">{{item.name}}</a></li>
 
         </ul>
 

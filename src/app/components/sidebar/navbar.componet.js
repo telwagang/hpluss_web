@@ -27,6 +27,7 @@ var NavbarComponent = /** @class */ (function () {
     };
     NavbarComponent = __decorate([
         core_1.Component({
+            selector: "ContentBar",
             templateUrl: "./navbar.html"
         }),
         __metadata("design:paramtypes", [globelHandler_service_1.GlobalEventsManager])

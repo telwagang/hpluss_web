@@ -28,9 +28,9 @@ import { requestOptionsProvider } from '../../../service/base.service';
     LoginModule,
     PersonalModule,
     HomeModule,
-    AppRouteModule,
     NotFoundModule,
-    ScheduleModule
+    ScheduleModule,
+    AppRouteModule
   ],
   declarations: [
     AppComponent

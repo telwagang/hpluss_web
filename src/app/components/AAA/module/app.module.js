@@ -38,9 +38,9 @@ var AppModule = /** @class */ (function () {
                 login_module_1.LoginModule,
                 personal_module_1.PersonalModule,
                 home_module_1.HomeModule,
-                app_route_1.AppRouteModule,
                 not_found_module_1.NotFoundModule,
-                schedule_module_1.ScheduleModule
+                schedule_module_1.ScheduleModule,
+                app_route_1.AppRouteModule
             ],
             declarations: [
                 app_component_1.AppComponent

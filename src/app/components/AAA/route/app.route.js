@@ -18,9 +18,7 @@ var login_componet_1 = require("../../login/componets/login.componet");
 var personal_route_1 = require("../../personal/personal.route");
 var not_found_compontent_1 = require("../componets/not-found-compontent");
 var auth_guard_1 = require("../../../guards/auth.guard");
-var nav_component_1 = require("../../topbar/nav.component");
-var support_componet_1 = require("../../supportbar/support.componet");
-var navbar_componet_1 = require("../../sidebar/navbar.componet");
+var index_1 = require("../componets/index");
 var route = [
     {
         path: 'home',
@@ -52,9 +50,9 @@ var route = [
         component: settings_component_1.SettingComponent, canActivate: [auth_guard_1.AuthGuard]
     },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: '', component: nav_component_1.NavComponent, outlet: 'nav' },
-    { path: '', component: navbar_componet_1.NavbarComponent, outlet: 'navbar' },
-    { path: '', component: support_componet_1.SupportComponent, outlet: 'support' },
+    { path: '', component: index_1.NavComponent, outlet: 'nav' },
+    { path: '', component: index_1.NavbarComponent, outlet: 'navbar' },
+    { path: '', component: index_1.SupportComponent, outlet: 'support' },
     { path: '**', component: not_found_compontent_1.PageNotFoundComponent }
 ];
 var AppRouteModule = /** @class */ (function () {
@@ -64,7 +62,6 @@ var AppRouteModule = /** @class */ (function () {
         core_1.NgModule({
             imports: [
                 router_1.RouterModule.forRoot(route),
-                //PersonalRoutingModule,
                 common_1.CommonModule
             ],
             declarations: [

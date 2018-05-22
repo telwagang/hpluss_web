@@ -14,10 +14,13 @@ var view_all_component_1 = require("./component/view-all.component");
 var schedule_component_1 = require("./component/schedule.component");
 var adjustment_component_1 = require("./component/adjustment.component");
 var not_found_compontent_1 = require("../../components/aaa/componets/not-found-compontent");
+var index_1 = require("../../components/AAA/componets/index");
+var auth_guard_1 = require("../../guards/auth.guard");
 exports.heroesRoutes = [
     {
         path: '',
         component: personal_component_1.PersonalComponent,
+        canActivate: [auth_guard_1.AuthGuard],
         children: [
             {
                 path: '',
@@ -39,6 +42,9 @@ exports.heroesRoutes = [
                 path: 'adjustment',
                 component: adjustment_component_1.AdjustmentComponent
             },
+            { path: '', component: index_1.NavComponent, outlet: 'nav' },
+            { path: '', component: index_1.NavbarComponent, outlet: 'navbar' },
+            { path: '', component: index_1.SupportComponent, outlet: 'support' },
             { path: '**', component: not_found_compontent_1.PageNotFoundComponent }
         ]
     }
@@ -48,7 +54,6 @@ var PersonalRoutingModule = /** @class */ (function () {
     }
     PersonalRoutingModule = __decorate([
         core_1.NgModule({
-            imports: [],
             exports: [
                 router_1.RouterModule
             ]

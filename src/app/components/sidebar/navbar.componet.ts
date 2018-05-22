@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { GlobalEventsManager } from '../../service/globelHandler.service';
 
 @Component({
+    selector: `ContentBar`,
     templateUrl: `./navbar.html`
 })
 

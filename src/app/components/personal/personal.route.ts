@@ -7,11 +7,13 @@ import { ViewAllComponent } from './component/view-all.component';
 import { ScheduleComponent } from './component/schedule.component';
 import { AdjustmentComponent } from './component/adjustment.component';
 import { PageNotFoundComponent } from '../../components/aaa/componets/not-found-compontent';
-
+import { NavbarComponent, NavComponent, SupportComponent } from "../../components/AAA/componets/index";
+import { AuthGuard } from "../../guards/auth.guard";
 export const heroesRoutes: Routes = [
   {
     path: '',
     component: PersonalComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
@@ -33,15 +35,15 @@ export const heroesRoutes: Routes = [
         path: 'adjustment',
         component: AdjustmentComponent
       },
+      { path: '', component: NavComponent, outlet: 'nav' },
+      { path: '', component: NavbarComponent, outlet: 'navbar' },
+      { path: '', component: SupportComponent, outlet: 'support' },
       { path: '**', component: PageNotFoundComponent }]
   }
 ];
 
 
 @NgModule({
-  imports: [
-   // RouterModule.forChild(heroesRoutes)
-  ],
   exports: [
     RouterModule
   ]
