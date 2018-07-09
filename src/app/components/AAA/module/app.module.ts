@@ -30,7 +30,8 @@ import { requestOptionsProvider } from '../../../service/base.service';
     HomeModule,
     NotFoundModule,
     ScheduleModule,
-    AppRouteModule
+    AppRouteModule,
+    NotFoundModule
   ],
   declarations: [
     AppComponent

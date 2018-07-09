@@ -40,7 +40,8 @@ var AppModule = /** @class */ (function () {
                 home_module_1.HomeModule,
                 not_found_module_1.NotFoundModule,
                 schedule_module_1.ScheduleModule,
-                app_route_1.AppRouteModule
+                app_route_1.AppRouteModule,
+                not_found_module_1.NotFoundModule
             ],
             declarations: [
                 app_component_1.AppComponent
